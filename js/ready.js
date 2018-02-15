@@ -335,10 +335,11 @@ $.blockUI({
 	
 	$(".nit").bind('blur', function(){
 		var nit = $(this).val();
+                var idevento = $('#idevent').val();
 		$.ajax({
 			url: '../js/setasis.php',
 			type: 'POST',
-			data: {nit:nit},
+			data: {nit:nit,idevento:idevento},
 			success: function( data ){
 				var obj = eval ( "(" + data + ")" );
 				

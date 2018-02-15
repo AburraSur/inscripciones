@@ -23,11 +23,6 @@ $idevent=$_GET['cod'];
 <script src="../js/jquery-1.4.2.min.js"></script>
 <script src="../js/jquery.blockUI-validate.js"></script>
 <script type="text/javascript" src="../js/ready.js"></script>
-<script  language="JavaScript" type="text/javascript"> 
-$(document).ready(function(){
-  // $("#idd").load("./cupo.php?id=<?php echo $idevent; ?>");	
-});
- </script> 
  <script language="javascript">
 
 function validarNro(e) {
@@ -161,39 +156,6 @@ if(($fec_act >= $fec_ini) && ($fec_act <= $fec_fin) && ($row['estado'] == 'ACTIV
 				</i></b></font></center>			
 			</td>
 		</tr>
-		<?php/*
-		session_start();
-			if(isset($_SESSION['iduser'])){
-			
-				echo "
-				
-					<tr>
-						<td>
-						<center>
-						
-							<font size=4 face=Verdana  ><i><b>Buscar</b></i></font><br>
-							
-							<font face=Verdana size=2 ><i><b>Empresa</font>
-							
-							<input type=text name=idsearch id=s1 /><img src=../img/search.png width=25 class=searchnit value=1 /><br><br>
-							
-							<font face=Verdana size=2 ><i><b>Participante</font>
-							
-							<input type=text name=practi id=s2 /><img src=../img/search.png width=25 class=searchnit value=2 />
-							
-						</center>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div id=result ></div>
-						</td>
-					</tr>
-					
-				";
-				
-			}*/
-		?>
 		<tr>
 			<td>
 				<table width="100%" >

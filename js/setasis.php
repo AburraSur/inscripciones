@@ -61,14 +61,16 @@ if( $num == 0 ){
         $rsoc = utf8_encode($rowemp['razonsocial']);
         $num = 1;
         if($rowemp['ctrafiliacion']){
+            $sqlTarifa = $db->consulta("select * from tarifas_evento where idevento='".$_POST['idevento']."' AND categoria='Afiliado' ");            
             $ctrafilia = 'Afiliado';
-            $tarifa = '210000';
-            $msntarifa = utf8_encode('Se&ntilde;or usuario, su tarifa por persona inscrita es de $210.000');
         }else{
+            $sqlTarifa = $db->consulta("select * from tarifas_evento where idevento='".$_POST['idevento']."' AND categoria='Matriculado' ");
             $ctrafilia = 'Matriculado';
-            $tarifa = '290000';
-            $msntarifa = utf8_encode('Se&ntilde;or usuario, su tarifa por persona inscrita es de $290.000');
         }
+        
+        $rowTarifa = $db->fetch_array($sqlTarifa);
+        $tarifa = $rowTarifa['valor'];
+        $msntarifa = utf8_encode('Se&ntilde;or usuario, su tarifa por persona inscrita es de $'). number_format($tarifa);
     }else{
         $sqlemp = $db->consulta("select * from empresa where nit='$nit' ");
         $rowemp = $db->fetch_array($sqlemp);

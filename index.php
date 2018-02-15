@@ -270,28 +270,28 @@ background-attachment: fixed;
 							
 			</tr>
 			<tr>
-				<td><font face="Verdana" size="3" ><b><i>Este Evento Requiere Pago</i></b></font></td>
-				<td>
-					<table>
-						<tr>
-							<td><font face="Verdana" size="3" class="pago" ><b><i>SI</i></b></font></td>
-							<td><input type="radio" name="pago" value="1" class="pago limitpay" /></td>
-							<td><font face="Verdana" size="3" class="pago" ><b><i>NO</i></b></font></td>
-							<td><input type="radio" name="pago" value="2" checked class="pago limitpay"  /></td>
-						</tr>
-					</table>
-				</td>
-				<td><font face="Verdana" size="3" ><b><i>Este Evento Requiere Certificados</i></b></font></td>
-				<td>
-					<table>
-						<tr>
-							<td><font face="Verdana" size="3" class="certi" ><b><i>SI</i></b></font></td>
-							<td><input type="radio" name="certi" value="1" class="certi" /></td>
-							<td><font face="Verdana" size="3" class="certi" ><b><i>NO</i></b></font></td>
-							<td><input type="radio" name="certi" value="2" checked class="certi"  /></td>
-						</tr>
-					</table>
-				</td>
+                            <td><font face="Verdana" size="3" ><b><i>Enviar Notificaci&oacute;n email</i></b></font></td>
+                            <td>
+                                <table>
+                                        <tr>							
+                                                <td><font face="Verdana" size="3" ><b><i>SI</i></b></font></td>
+                                                <td><input type="radio" name="sendEmail" value="1"  checked="true"/></td>	
+                                                <td><font face="Verdana" size="3" ><b><i>NO</i></b></font></td>
+                                                <td><input type="radio" name="sendEmail" value="0"  /></td>						
+                                        </tr>
+                                </table>
+                            </td>				
+                            <td><font face="Verdana" size="3" ><b><i>Este Evento Requiere Certificados</i></b></font></td>
+                            <td>
+                                    <table>
+                                            <tr>
+                                                    <td><font face="Verdana" size="3" class="certi" ><b><i>SI</i></b></font></td>
+                                                    <td><input type="radio" name="certi" value="1" class="certi" /></td>
+                                                    <td><font face="Verdana" size="3" class="certi" ><b><i>NO</i></b></font></td>
+                                                    <td><input type="radio" name="certi" value="2" checked class="certi"  /></td>
+                                            </tr>
+                                    </table>
+                            </td>
 			</tr>                  
                             
 			<tr>
@@ -319,16 +319,16 @@ background-attachment: fixed;
 				</td>
 			</tr>
                         <tr>
-                            <td><font face="Verdana" size="3" ><b><i>Enviar Notificaci&oacute;n email</i></b></font></td>
+                            <td><font face="Verdana" size="3" ><b><i>Este Evento Requiere Pago</i></b></font></td>
                             <td>
-                                <table>
-                                        <tr>							
-                                                <td><font face="Verdana" size="3" ><b><i>SI</i></b></font></td>
-                                                <td><input type="radio" name="sendEmail" value="1"  checked="true"/></td>	
-                                                <td><font face="Verdana" size="3" ><b><i>NO</i></b></font></td>
-                                                <td><input type="radio" name="sendEmail" value="0"  /></td>						
-                                        </tr>
-                                </table>
+                                    <table>
+                                            <tr>
+                                                    <td><font face="Verdana" size="3" class="pago" ><b><i>SI</i></b></font></td>
+                                                    <td><input type="radio" name="pago" value="1" class="pago limitpay" /></td>
+                                                    <td><font face="Verdana" size="3" class="pago" ><b><i>NO</i></b></font></td>
+                                                    <td><input type="radio" name="pago" value="2" checked class="pago limitpay"  /></td>
+                                            </tr>
+                                    </table>
                             </td>
 			</tr>
 			</table>
@@ -370,8 +370,8 @@ background-attachment: fixed;
 			
 			</fieldset>
 			</div>
-                        <fieldset><legend>Información del pago</legend>
-                            <table align="center" width="40%" >
+                        <fieldset id="paylimit" style="display:none" ><legend><b><i>Información del pago</i></b></legend>
+                            <table align="center" width="70%" >
                                 <tr>
                                     <td><font face="Verdana" size="3" ><b><i>Fecha Limite de Pago</i></b></font></td>
                                     <td>
@@ -381,19 +381,17 @@ background-attachment: fixed;
                                 <tr>
                                     <td><font face="Verdana" size="3" ><b><i>Tarifa Afiliados</i></b></font></td>
                                     <td>
-                                            <input type="text" name="fecpago" class="fecha required" size="15" />
+                                            <input type="text" name="tarifaAfiliados" class="required" size="15" />
                                     </td>
-                                </tr>
-                                <tr>
                                     <td><font face="Verdana" size="3" ><b><i>Tarifa Matriculados</i></b></font></td>
                                     <td>
-                                            <input type="text" name="fecpago" class="fecha required" size="15" />
+                                            <input type="text" name="tarifaMatriculados" class="required" size="15" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><font face="Verdana" size="3" ><b><i>Tarifa Particulares</i></b></font></td>
                                     <td>
-                                            <input type="text" name="fecpago" class="fecha required" size="15" />
+                                            <input type="text" name="tarifaParticulares" class="required" size="15" />
                                     </td>
                                 </tr>
                             </table>    
