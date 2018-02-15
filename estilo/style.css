@@ -1,0 +1,38 @@
+/* CSS Document */
+
+#upload_button {
+	width:160px;
+	height:22px;
+	background-image:url(../img/subir.png);
+	color:#CCCCCC;
+	font-weight:bold;
+	padding-top:15px;
+	margin:auto;
+	cursor:pointer;
+}
+#upload_button:hover{
+	color:#FFFFFF;
+}
+#upload_button2{
+	width:160px;
+	height:22px;
+	background-image:url(../img/subir.png);
+	color:#CCCCCC;
+	font-weight:bold;
+	padding-top:15px;
+	margin:auto;
+	cursor:pointer;
+}
+#upload_button2:hover{
+	color:#FFFFFF;
+}
+
+.selectboxes{
+	font-size: 14px;
+	width: 25em;
+	color: #424242;
+}
+
+#divpay{
+	text-align: center;
+}

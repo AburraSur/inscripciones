@@ -1,0 +1,128 @@
+html{
+}
+body{
+background-attachment: fixed;
+background-image: url("../img/bg2.jpg");
+}
+
+.titulo{
+}
+.tablatitulo{
+    font: 23px helvetica;
+    font-style:oblique; 
+    text-align: center;
+    width:90%;
+    margin: auto;
+}
+
+.row{
+  padding-left: 30px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+}
+
+.empresa{
+    margin-top: 30px;
+    margin-left: 60px;
+    border-style: solid;
+    border-width: 2px;
+    border-color:#006dcc;
+    width: 90%;
+    height: auto;
+    
+}
+
+
+.cerrado{
+   font: 40px helvetica;
+    font-style:oblique; 
+    text-align: center;
+    width:90%;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+}
+
+.normal{
+	font: 18px helvetica;
+}
+
+.nombre{
+	font: 22px helvetica;
+}
+
+.footer{
+	font: 14px helvetica;
+	
+}
+
+#footer{
+	position: absolute;
+	left: 380px;
+	bottom: 25px;
+	text-align: center;
+	background-color: silver;
+	width: 900px;
+}
+
+#subfooter{
+	position: absolute;
+	bottom: 40px;
+	
+}
+
+@page {
+    margin-left: 0em;
+	margin-right: 0.6em;
+        }
+
+p{
+	text-align: justify;
+	font: 10px helvetica;
+}
+
+.firma{
+	font-size: 18px;
+	font: helvetica;
+}
+
+
+#shot{
+ position:absolute;
+ top:50px;
+ right:200px;
+ 
+}
+#shot2{
+ position:absolute;
+ top:50px;
+ right:300px;
+ 
+}
+
+input{
+	background-color: #F2F2F2;
+}
+select{
+	background-color: #F2F2F2;
+}
+
+textarea{
+	background-color: #F2F2F2;
+}
+
+.cerrar{    
+    margin: auto;
+    top: 15px;
+    right: 45px;
+    width: 10px;
+}
+
+.cuerpo{
+   margin: auto;
+   background-color:#F8F8F8;
+   border-radius: 20px;
+   width: 90%;
+   padding-bottom: 50px;
+   height: auto;
+}

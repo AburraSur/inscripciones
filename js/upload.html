@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Area Administrativa</title>
+<LINK HREF="../estilo/uploadfile.min.css" REL="stylesheet" TYPE="text/css">
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery.uploadfile.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+	
+	$("#fileuploader").uploadFile({
+		url:"../insert/upload.php",
+		fileName:"myfile",
+		 returnType: "json",
+		showDelete: true,
+		deleteCallback: function (data, pd) {
+			for (var i = 0; i < data.length; i++) {
+				$.post("../insert/delete.php", {op: "delete",name: data[i]},
+					function (resp,textStatus, jqXHR) {
+						//Show Message	
+					alert(resp);
+				});
+			}
+			/*var txt = pd.statusbar.text(); //You choice.
+			alert(txt);*/
+		},
+		uploadsub: function (data, pd) {
+			parent.$("#nomf").attr('value',data[0]);
+			parent.$("#img").attr('src','./img/uploads/'+data[0]);
+		}
+		
+		
+	});
+	
+});
+</script>
+</head>
+<body>
+<div id="fileuploader">Subir Banner</div>
+</body>

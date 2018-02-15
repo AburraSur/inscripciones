@@ -1,0 +1,68 @@
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="./estilo/stylesheet.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="./estilo/ui.core.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="./estilo/ui.theme.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="./estilo/jquery-ui-1.7.1.custom.css" media="screen" />
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script src="./js/jquery.js"></script>
+  
+  <script src="./js/jquery-1.4.2.min.js"></script>
+  <script language="javascript" src="./js/jquery-1.5.1.min.js"></script>
+
+
+	
+	<link rel="stylesheet" type="text/css" href="./js/jquery.ptTimeSelect.css" media="screen" />
+	<script type="text/javascript" language="JavaScript" src="./js/jquerySetDirec.js"></script>
+	<script type="text/javascript"> 
+$(document).ready(
+			function () {
+				$('#sample2 input').ptTimeSelect();
+				$(document).keydown(function(e) {
+				var key;
+
+if(window.event) // IE
+
+{
+
+key = e.keyCode;
+
+}
+
+else if(e.which) // Netscape/Firefox/Opera
+
+{
+
+key = e.which;
+
+}
+        var elid = $(document.activeElement).hasClass('textInput');
+      // console.log(e.keyCode + ' && ' + elid);
+        if ((key <= 8 || key > 8) && elid) {
+            return false;
+        };
+		
+    });
+			}
+		);
+
+</script>
+<!--<script language="javascript">
+
+function validarNro(e) {
+
+
+return false;
+
+}
+
+</script>-->
+</head>
+<body>
+<div id="sample2">
+	<div><input type="text" name="hevent" size="15" class="required textInput"   /></div>
+					
+</div>
+
+</body>
+</html>

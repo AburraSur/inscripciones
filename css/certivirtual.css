@@ -1,0 +1,83 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6/09/2016, 02:44:59 PM
+    Author     : AuxSistemas
+*/
+.cuerpo{
+    height:800px;
+    width: 1050px;
+}
+
+
+.titulo{
+        position: absolute;
+        left: 225px;
+        top: 180px;
+        width: 600px;
+        z-index:1;
+	text-align:center;
+	font-size: 30px;
+        font-family: Helvetica;
+		margin-top: 15px;
+}
+
+.normal{
+        position: absolute;
+        left: 225px;
+        top: 220px;
+        width: 600px;
+        z-index:1;
+	text-align: center;
+	font-size: 18px;
+	font-family:Helvetica;
+	margin-top: 10px;
+}
+
+.nombre{
+        position: absolute;
+        left: 225px;
+        top: 230px;
+        width: 600px;
+        z-index:1;
+	text-align: center;
+	font-size: 22px;
+	font-family: Helvetica;
+}
+
+.firma{
+       position: absolute;
+        left: 230px;
+        top: 570px;
+        width: 600px;
+        z-index:1;
+        text-align: center;
+	
+}
+
+#footer{
+	position: absolute;
+	text-align: center;
+	bottom: 40px;
+	font-size: 12px;
+	font-family:Helvetica;
+}
+
+.certifica{
+        position: absolute;
+        left: 80px;
+        top: 350px;
+	width: 930px;
+	height: 210px;
+        text-align: justify;
+	font-size: 20px;
+	font-family:Helvetica;
+}
+
+p{
+    font-stretch:condensed;
+    font-size:24px;
+}
