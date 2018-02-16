@@ -6,7 +6,7 @@ require_once("excel-ext.php");
 
 
 $conEmp = mysql_connect("localhost", "root", "Ccas1992");
-mysql_select_db("ccasco_promo2017", $conEmp);
+mysql_select_db("ccasco_promo", $conEmp);
 
 $sql = "SELECT ev.nom_evento ,a.cedula ,a.nombres ,a.apellidos ,a.email ,a.tel ,a.cel ,a.municipio ,a.cargo ,e.nit ,e.rsocial ,e.dir ,e.comentario ,ea.e_asistio 
 FROM asistentes a inner join empresa e inner join event_asist ea inner join evento ev

@@ -37,7 +37,7 @@ if (!$conn->set_charset("utf8")) {
 $year = 'all';
 
 $conEmp = mysql_connect("localhost", "root", "Ccas1992");
-mysql_select_db("ccasco_promo2017", $conEmp);
+mysql_select_db("ccasco_promo", $conEmp);
 
 if($_GET['year'] === 'all'){
 	$wh = "ORDER BY ev.idevento ASC";

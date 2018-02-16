@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 
 //conexion servidor local
 $conEmp = mysql_connect("localhost", "root", "Ccas1992");
-mysql_select_db("ccasco_promo2017", $conEmp);
+mysql_select_db("ccasco_promo", $conEmp);
 
 $sqlpagos = "select * from evento where idevento=$_GET[cod] ";
 $sqlp = mysql_query($sqlpagos, $conEmp) or die(mysql_error());

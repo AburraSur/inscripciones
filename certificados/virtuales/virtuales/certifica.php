@@ -1,7 +1,7 @@
 <?php
 
 $conexion = mysql_connect("localhost","root","Ccas1992");  
-  mysql_select_db("ccasco_promo2017",$conexion) or die(mysql_error());  
+  mysql_select_db("ccasco_promo",$conexion) or die(mysql_error());  
   
   
 $ideve = $_GET['ideve'];

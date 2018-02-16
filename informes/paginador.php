@@ -14,7 +14,7 @@ if(!empty($_GET['pag'])){
 function paginador($var1,$var2,$var3){
 $db_con = mysqli_connect ("localhost","root","Ccas1992");
         if (!$db_con){}
-        if (!mysqli_select_db ($db_con,"ccasco_promo2017")){}
+        if (!mysqli_select_db ($db_con,"ccasco_promo")){}
  
 
 $RegistrosAMostrar=20;

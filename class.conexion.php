@@ -6,7 +6,7 @@ class conn{
  public function conn(){  
   if(!isset($this->conexion)){  
   $this->conexion = (mysql_connect("localhost","root","Ccas1992")) or die(mysql_error());  
-  mysql_select_db("ccasco_promo2017",$this->conexion) or die(mysql_error());  
+  mysql_select_db("ccasco_promo",$this->conexion) or die(mysql_error());  
   }  
   }  
  public function consulta($consulta){  
@@ -44,7 +44,7 @@ class conn{
 public function cerrar(){
 
   $conexion2 = (mysql_connect("localhost","root","Ccas1992")) or die(mysql_error());  
-  mysql_select_db("ccasco_promo2017",$conexion2) or die(mysql_error());  
+  mysql_select_db("ccasco_promo",$conexion2) or die(mysql_error());  
    mysql_close($conexion2) ;  
   
    

@@ -3,7 +3,7 @@ class conectar{
 private $servidor = "localhost";
 private$usuario = "root";
 private$clave = "Ccas1992";
-private$baseDatos = "ccasco_promo2017";
+private$baseDatos = "ccasco_promo";
 private $conexion;
 
 function conectarbd(){

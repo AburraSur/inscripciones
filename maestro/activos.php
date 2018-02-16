@@ -20,7 +20,7 @@ private $link;
 private $servidor2 = "localhost";
 private$usuario2 = "root";
 private$clave2 = "Ccas1992";
-private$baseDatos2 = "ccasco_promo2017";
+private$baseDatos2 = "ccasco_promo";
 private $link2;
 
 function activos(){

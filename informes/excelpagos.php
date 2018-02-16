@@ -6,7 +6,7 @@ require_once("excel-ext.php");
 
 
 $conEmp = mysql_connect("localhost", "root", "Ccas1992");
-mysql_select_db("ccasco_promo2017", $conEmp);
+mysql_select_db("ccasco_promo", $conEmp);
 
 $sql = "
 	SELECT e.rsocial,a.tel,a.nombres,a.apellidos,p.vlrpago,p.formapago,p.nrotran,p.fectrans,p.nrorecibo,p.fecrecibo,p.tarifa,p.observa 

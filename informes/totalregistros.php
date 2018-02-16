@@ -22,7 +22,7 @@ if (!$conn->set_charset("utf8")) {
 $year = 'all';
 
 $conEmp = mysql_connect("localhost", "root", "Ccas1992");
-mysql_select_db("ccasco_promo2017", $conEmp);
+mysql_select_db("ccasco_promo", $conEmp);
 
 
 $sql = "SELECT ev.fec_event 'FECHAEVENTO', ev.idevento 'CodEvento', ev.nom_evento 'EVENTO', em.nit 'NIT', em.rsocial 'RSOCIAL', em.activos, em.fechaRenovado, em.ultanoren, em.ciiu,  at.cedula 'CEDULA', at.nombres 'NOMBRES', at.apellidos 'APELLIDOS',at.cargo 'CARGO', at.email 'email', at.tel 'TEL',at.ext 'EXT',at.cel 'CEL',at.municipio 'MUNICIPIO',at.habeas 'habeas',ea.e_asistio 'ASISTIO'
