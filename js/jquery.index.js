@@ -263,15 +263,7 @@ $(document).ready(function(){
 			
 	});
 		
-	$("#resp").change(function(){
-		var id = $(this).val();
 		
-		if( id == 2){
-			$(".mailresp").show("fast");
-		}else{
-			$(".mailresp").hide("fast");
-		}
-	});	
 	
 	$("#add").click(function(){
 		var num = ($('#tabmod tbody tr').length)+1;

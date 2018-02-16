@@ -28,7 +28,6 @@ session_start();
 <script language="javascript" src="./js/AjaxUpload.2.0.min.js"></script>
 <script>
 $(document).ready(function(){
-	$(".mailresp").hide("fast");
 	$("#ifirma").hide("fast");
 	$("#cancelf").hide("fast");
 	$("#chfirm").click(function(){
@@ -212,7 +211,7 @@ background-attachment: fixed;
 					<font face="Verdana" size="3" ><b><i>Cupo de Inscripciones: </i></b></font>
 				</td>
 				<td>
-					<input type="text" name="cupo" size="15" class="required" />
+					<input type="text" name="cupo" size="32" class="required" />
 				</td>
 			
 				<td>
@@ -223,7 +222,7 @@ background-attachment: fixed;
 					<a href="javascript:doNothing()" onClick="setDateField(document.form1.fecevent);top.newWin=window.open('./js/calendar.html','cal','dependent=yes,width=210,height=230,screenX=400,screenY=200,titlebar=yes')"><input type="text" name="fecevent" size="15" class="required" /></a>
 				</td>-->
 				<td>
-					<input type="text" name="fecevent" class="fecha required" size="15" />
+					<input type="text" name="fecevent" class="fecha required" size="32" />
 				</td>
 			</tr>
 			<tr>
@@ -232,7 +231,7 @@ background-attachment: fixed;
 				</td>
 				<td>
 					<div class="sample2">
-					<div><input type="text" name="hevent" size="15" class="required" /></div>
+					<div><input type="text" name="hevent" size="32" class="required" /></div>
 					
 					</div>
 				</td>
@@ -241,10 +240,7 @@ background-attachment: fixed;
 					<font face="Verdana" size="3" ><b><i>Responsable del Evento: </i></b></font>
 				</td>
 				<td>
-					<select name="respon" id="resp" >
-						<option>--Seleccione--</option>
-						<option value="1" >Promocion</option>
-						<option value="2" >UCI</option>
+					<input type="text" name="respon" id="resp" size="32" />
 				</td>
 			</tr>
 			<tr>
@@ -370,29 +366,39 @@ background-attachment: fixed;
 			
 			</fieldset>
 			</div>
-                        <fieldset id="paylimit" style="display:none" ><legend><b><i>Información del pago</i></b></legend>
+                        <fieldset id="paylimit" style="display:none" ><legend><b><i>Informaci&oacute;n del pago</i></b></legend>
                             <table align="center" width="70%" >
                                 <tr>
                                     <td><font face="Verdana" size="3" ><b><i>Fecha Limite de Pago</i></b></font></td>
                                     <td>
-                                            <input type="text" name="fecpago" class="fecha required" size="15" />
+                                            <input type="text" name="fecpago" class="fecha required" size="32" />
                                     </td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <td><font face="Verdana" size="3" ><b><i>Tarifa Afiliados</i></b></font></td>
                                     <td>
-                                            <input type="text" name="tarifaAfiliados" class="required" size="15" />
+                                            <input type="text" name="tarifaAfiliados" class="required" size="32" />
                                     </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
                                     <td><font face="Verdana" size="3" ><b><i>Tarifa Matriculados</i></b></font></td>
                                     <td>
-                                            <input type="text" name="tarifaMatriculados" class="required" size="15" />
+                                            <input type="text" name="tarifaMatriculados" class="required" size="32" />
                                     </td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <td><font face="Verdana" size="3" ><b><i>Tarifa Particulares</i></b></font></td>
                                     <td>
-                                            <input type="text" name="tarifaParticulares" class="required" size="15" />
+                                            <input type="text" name="tarifaParticulares" class="required" size="32" />
                                     </td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </table>    
                         </fieldset>
@@ -405,13 +411,13 @@ background-attachment: fixed;
 				<font face="Verdana" size="3" ><b><i>Fecha Inicio: </i></b></font>
 			</td>
 			<td>
-				<input type="text" name="finicio" class="fecha" size="15" />
+				<input type="text" name="finicio" class="fecha" size="32" />
 			</td>
 			<td>
 				<font face="Verdana" size="3" ><b><i>Fecha Cierre: </i></b></font>
 			</td>
 			<td>
-				<input type="text" name="fcierre" class="fecha" size="15" />
+				<input type="text" name="fcierre" class="fecha" size="32" />
 			</td>
 			</tr>
 			</table>

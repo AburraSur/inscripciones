@@ -123,7 +123,7 @@ if($numins < $rowsql['cupo'] ){
 				if($numask==0){
 					$eventasis= $db->consulta("insert into event_asist (idevent,cedula,nit,tipocert) values ($idev,'$ced','$nit',$tipocert)");
                                         if( $pago == 1 && $eventasis ){
-					  $db->consulta("insert into pagos (vlrpago,formapago,nrotran,fectrans,nrorecibo,fecrecibo,observa,nit,cedula,tarifa,idevento) values (999999,0,0,0,0,0,0,'$nit','$ced','$tarifa','$idev')");			
+					  $db->consulta("insert into pagos (vlrpago,formapago,nrotran,fectrans,nrorecibo,fecrecibo,observa,nit,cedula,tarifa,idevento) values (0,0,0,0,0,0,0,'$nit','$ced','$tarifa','$idev')");			
 					}
 					$db->consulta("insert into log (fechalog,descripcion) values ('$fecha','El Usuario $varsesion inscribio a $ced en evento $idev, Solicita certificado tipo $_POST[tipocert] ')");
 				
@@ -200,18 +200,26 @@ $pmeses = array("","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Ago
 				$pmes=($pmeses[intval((date("m",mktime(0,0,0,$fpmes,$fpdia,$fpanio))))]);
 				$fpru=($pdias[intval((date("w",mktime(0,0,0,$fpmes,$fpdia,$fpanio))))]);
 
-                                if($rowsql['idevento']=='793'){
-                                    $correo.="El pago de la inscripci&oacute;n puede hacerse en efectivo, cheque, tarjeta d&eacute;bito o cr&eacute;dito en la Sede Principal de la C&aacute;mara de Comercio Aburr&aacute; Sur (Calle 48 Nro. 50-16, Parque Brasil, Municipio de Itag&uuml;&iacute;);  o en las Sedes Seccionales de Caldas, Envigado, La Estrella o Sabaneta.</p>
+//                                if($rowsql['idevento']=='793'){
+//                                    $correo.="El pago de la inscripci&oacute;n puede hacerse en efectivo, cheque, tarjeta d&eacute;bito o cr&eacute;dito en la Sede Principal de la C&aacute;mara de Comercio Aburr&aacute; Sur (Calle 48 Nro. 50-16, Parque Brasil, Municipio de Itag&uuml;&iacute;);  o en las Sedes Seccionales de Caldas, Envigado, La Estrella o Sabaneta.</p>
+// 
+//                                    <p>Tambi&eacute;n puede realizar transferencia o consignar a trav&eacute;s del formato Bancario a la <b>Cuenta de Ahorros de COLPATRIA Nro. 4972094424</b> a nombre de C&aacute;mara de Comercio Aburr&aacute; Sur, NIT: 8001574278, en dicho formato deber&aacute; seleccionar la opci&oacute;n <b>Recaudo Empresarial y enviar copia de la consignaci&oacute;n o el soporte de pago</b> con el Nombre del(os) inscrito(s) al correo: eventos2@ccas.org.co</p>
+//
+//                                    <p><b>Recuerde:</b> Para garantizar su participaci&oacute;n y asistencia deber&aacute; realizar el pago, por tardar, en la fecha l&iacute;mite, lunes 5 de febrero de 2018.</p>
+//
+//                                    <p>La factura y el certificado ser&aacute;n entregados el d&iacute;a del evento al finalizar la jornada.</p>";
+//                                }else{
+//
+//                                    $correo.= "Para garantizar su cupo en el evento recuerde realizar su pago antes del $fpru $fpdia de $pmes de $fpanio y enviar el soporte a trav&eacute;s del correo electr&oacute;nico eventos@ccas.org.co</p>";
+//                                } 
+                                
+                                $correo.="El pago de la inscripci&oacute;n puede hacerse en efectivo, cheque, tarjeta d&eacute;bito o cr&eacute;dito en la Sede Principal de la C&aacute;mara de Comercio Aburr&aacute; Sur (Calle 48 Nro. 50-16, Parque Brasil, Municipio de Itag&uuml;&iacute;);  o en las Sedes Seccionales de Caldas, Envigado, La Estrella o Sabaneta.</p>
  
-                                    <p>Tambi&eacute;n puede realizar transferencia o consignar a trav&eacute;s del formato Bancario a la <b>Cuenta de Ahorros de COLPATRIA Nro. 4972094424</b> a nombre de C&aacute;mara de Comercio Aburr&aacute; Sur, NIT: 8001574278, en dicho formato deber&aacute; seleccionar la opci&oacute;n <b>Recaudo Empresarial y enviar copia de la consignaci&oacute;n o el soporte de pago</b> con el Nombre del(os) inscrito(s) al correo: eventos2@ccas.org.co</p>
+                                    <p>Tambi&eacute;n puede realizar transferencia o consignar a trav&eacute;s del formato Bancario a la <b>Cuenta de Ahorros de COLPATRIA Nro. 4972094424</b> a nombre de C&aacute;mara de Comercio Aburr&aacute; Sur, NIT: 8001574278, en dicho formato deber&aacute; seleccionar la opci&oacute;n <b>Recaudo Empresarial y enviar copia de la consignaci&oacute;n o el soporte de pago</b> con el Nombre del(os) inscrito(s) al correo: ".$rowsql['mailresp']." </p>
 
-                                    <p><b>Recuerde:</b> Para garantizar su participaci&oacute;n y asistencia deber&aacute; realizar el pago, por tardar, en la fecha l&iacute;mite, lunes 5 de febrero de 2018.</p>
+                                    <p><b>Recuerde:</b> Para garantizar su participaci&oacute;n y asistencia deber&aacute; realizar el pago, por tardar, en la fecha l&iacute;mite, $fpru $fpdia de $pmes de $fpanio.</p>
 
                                     <p>La factura y el certificado ser&aacute;n entregados el d&iacute;a del evento al finalizar la jornada.</p>";
-                                }else{
-
-                                    $correo.= "Para garantizar su cupo en el evento recuerde realizar su pago antes del $fpru $fpdia de $pmes de $fpanio y enviar el soporte a trav&eacute;s del correo electr&oacute;nico eventos@ccas.org.co</p>";
-                                }    
 }
 
 $correo.="<p><b><i>Por favor no contestar a este mensaje, ha sido enviado desde una cuenta autom&aacute;tica y no recibir&aacute; respuesta.</i></b></p>";
@@ -298,14 +306,15 @@ $correo.="<p><b><i>Por favor no contestar a este mensaje, ha sido enviado desde 
 </table></body>";
 						$mail2->SetFrom("inscripciones@ccas.co","Inscripciones Eventos Aburra Sur");
 					
-					if( $rowmail['respon'] == 1){
-						$mail2->AddAddress("eventos@ccas.org.co", "Eventos CCAS");
-						$mail2->AddAddress("auditorios@ccas.org.co", "Auditorios CCAS");
-						//$mail2->AddAddress("auxiliar.sistemas@ccas.org.co", "Auditorios CCAS");
-					}else{
-						$mail2->AddAddress("$rowmail[mailresp]", "UCI");
-					}
-						$mail2->Subject = "Inscripciones Evento: $rowmail[nom_evento] ";
+//					if( $rowmail['respon'] == 1){
+//						$mail2->AddAddress("eventos@ccas.org.co", "Eventos CCAS");
+//						$mail2->AddAddress("auditorios@ccas.org.co", "Auditorios CCAS");
+//						//$mail2->AddAddress("auxiliar.sistemas@ccas.org.co", "Auditorios CCAS");
+//					}else{
+//						$mail2->AddAddress("$rowmail[mailresp]", "UCI");
+//					}
+						$mail2->AddAddress("$rowmail[mailresp]", "$rowmail[respon]");
+                                                $mail2->Subject = "Inscripciones Evento: $rowmail[nom_evento] ";
 						$mail2->MsgHTML($body2);
                                                 $mail2->Send(); 
 						/*if(!$mail2->Send()){
