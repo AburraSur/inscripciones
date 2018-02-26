@@ -259,7 +259,7 @@ if(($fec_act >= $fec_ini) && ($fec_act <= $fec_fin) && ($row['estado'] == 'ACTIV
 								echo "
 									<fieldset id=fieldmod ><legend><b><i>Modulos del Evento</i></b></legend>
 										<font face=Verdana size=1  ><b><i>Por Favor Seleccione los Modulos en los Cuales Desea Inscribirse</i></b></font><br><br>
-										<table width=90% align=center >
+										<table width=70% align=center >
 											<tr>";
 													//<td><input type=checkbox name=complet value=all id=all /></td>
 													//<td><font face=Verdana size=2  ><b><i>Evento Completo</i></b></td>
@@ -271,8 +271,7 @@ if(($fec_act >= $fec_ini) && ($fec_act <= $fec_fin) && ($row['estado'] == 'ACTIV
 											$nomod = $rowmod[modulo];
 											echo "
 												<tr>
-													<td><input type=checkbox name=mod$i value=$rowmod[idmod] class=allmod /></td>
-													<td><font face=Verdana size=2  ><b><i>$rowmod[fec_mod] &nbsp;&nbsp;$nomod </i></b></td>
+													<td><input type=checkbox name=mod$i value=$rowmod[idmod] class=allmod checked='true' style='margin-right: 10px;' /><font face=Verdana size=2  ><b><i>$rowmod[fec_mod] &nbsp;&nbsp;$nomod </i></b></td>
 												</tr>
 											";
 											

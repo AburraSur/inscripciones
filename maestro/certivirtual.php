@@ -10,7 +10,7 @@ $ideve = $_GET['ideve'];
 $rowmail = $db->consulta2("select nom_evento from evento where idevento=$ideve ");
 $participante = $db->consulta2("select nombres,apellidos,email from asistentes where cedula=$id ");
 
-$correo="<p style='font-family:Arial;font-size:12px;line-height:16px;align:justify'>Se&ntilde;or Usuario, su certificado de asistencia al evento $rowmail[nom_evento], se encuentra disponible para su descarga en el siguiente link: http://inscripciones.ccas.co/certificados/virtuales/?ideve=$ideve&idasis=$id 
+$correo="<p style='font-family:Arial;font-size:12px;line-height:16px;align:justify'>Se&ntilde;or Usuario, su certificado de asistencia al evento $rowmail[nom_evento], se encuentra disponible para su descarga en el siguiente link: http://www.ccas.org.co:5585/inscripciones/certificados/virtuales/index.php?ideve=$ideve&idasis=$id 
 <br><br>
 </p>
 <p><b><i>Por favor no contestar a este mensaje, ha sido enviado desde una cuenta autom&aacute;tica y no recibir&aacute; respuesta.</i></b></p>";

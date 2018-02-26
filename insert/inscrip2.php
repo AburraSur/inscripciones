@@ -242,7 +242,7 @@ $correo.="<p><b><i>Por favor no contestar a este mensaje, ha sido enviado desde 
 					
 					$mail->Host       = "smtp-relay.sendinblue.com";
 					$mail->Port       = 587;
-					$mail->Username = "contacto@ccas.org.co";
+					$mail->Username = "notificaciones@ccas.org.co";
 					$mail->Password = "GJgmTsr7hFkN83xp";
 					$body = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style>p{font-family:Arial;font-size:12px}</style></head><body>'.$correo.'</body>';
 					$mail->SetFrom("inscripciones@ccas.co","Inscripciones Eventos Aburra Sur");
@@ -293,7 +293,7 @@ $correo.="<p><b><i>Por favor no contestar a este mensaje, ha sido enviado desde 
 						
 						$mail2->Host       = "smtp-relay.sendinblue.com";
 						$mail2->Port       = 587;
-						$mail2->Username = "contacto@ccas.org.co";
+						$mail2->Username = "notificaciones@ccas.org.co";
 						$mail2->Password = "GJgmTsr7hFkN83xp";
 						$body2 = "<html><head><style>p{font-family:Arial;font-size:12px}</style></head><body>Hay un Nuevo Registro en el Evento $rowmail[nom_evento]<br><br>Empresa: $nomemp &nbsp;&nbsp; NIT: $nit<br><br><br>  <table align=center >
 <thead>
