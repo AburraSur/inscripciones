@@ -54,7 +54,7 @@ if( $num == 0 ){
 
 }elseif( isset($nit)){
 	   
-    $rowemp = $sii->consultasii("SELECT razonsocial, dircom, ctrafiliacion FROM mreg_est_inscritos where nit='$nit' or numid='$nit' ");
+    $rowemp = $sii->consultasii("SELECT razonsocial, dircom, ctrafiliacion FROM mreg_est_inscritos where ctrestmatricula IN ('MA','MI','IA') and (nit='$nit' or numid='$nit') ");
     $sqlTarifa = $db->consulta("select * from tarifas_evento where idevento='".$_POST['idevento']."' ");            
     while($rowTarifa = $db->fetch_array($sqlTarifa)){
         $arregloTarifas[$rowTarifa['categoria']] = $rowTarifa['valor'];
