@@ -84,8 +84,8 @@ $tabla = "
 			<th>EMPRESA</th>
 			<th>DIRECCION</th>
                         <th>ACTIVOS</th>
-                        <th>CIIU</th>
                         <th>FECHA RENOVADO</th>
+                        <th>CIIU</th>
                         <th>CURSOS ACTIVOS</th>
 			$tabpago
 			<th>COMENTARIO</th>
