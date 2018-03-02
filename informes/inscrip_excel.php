@@ -124,7 +124,7 @@ if($resEmp = $link->query($sql) or trigger_error(mysqli_error($link))){}
 
     while($row = $resEmp->fetch_array()){
     $nit = $row['NIT'];
-    $activos = "SELECT matricula, acttot,ciiu1, fecrenovacion FROM `mreg_est_inscritos` WHERE `organizacion` != 02 and `categoria` != 03 and `categoria` != 02 and ctrestmatricula != 'NA' and ctrestmatricula != 'NN' and `numid` LIKE  '%$nit%'";
+    $activos = "SELECT matricula, acttot,ciiu1, fecrenovacion FROM `mreg_est_inscritos` WHERE `organizacion` != 02 and `categoria` != 03 and `categoria` != 02 and ctrestmatricula NOT IN ('NA','NN','MC','IC') and `numid` LIKE  '%$nit%'";
     if ($datosA = $conn->query($activos) or trigger_error(mysqli_error($conn))){}
     $datosActivos = $datosA->fetch_array();
     $activo = $datosActivos['acttot'];
