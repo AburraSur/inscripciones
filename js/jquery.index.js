@@ -1046,4 +1046,27 @@ $(document).ready(function(){
 		})
 		return false;
 	});
+        
+        $('#findpartTarifa').click(function(){
+		var idevent = $('#eventchTarifa').val();
+		var idpart = $('#cedpartTarifa').val();
+		$.ajax({
+			url: './js/find2.php',
+			type: 'GET',
+			data: {n:6,idevent:idevent,idpart:idpart},
+			success: function ( datac ){
+				var objc = eval ( '(' + datac + ')' );
+				if(objc.sw==1){
+					$('#inscritoTarifa').html(objc.part);
+					$('#idpartTarifa').val(idpart);
+                                        $('#eventoTarifa').val(idevent);
+                                        $('#tarifaEvento').val(objc.tarifa);
+					$('#changeTarifa').show('fast');
+				}else{
+				
+				}
+			}
+		})
+		return false;
+	});
   });

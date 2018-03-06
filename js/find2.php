@@ -187,6 +187,26 @@ if($n == 3){
 	}else{
 		$array = array("sw" => 2 , "error" => $sqlrel , "num" => $num);
 	}
+}elseif($n==6){
+//	$sqlrel = $db->consulta("select * from pagos where idevent='$_GET[idevent]' and cedula='$_GET[idpart]'");
+        $sqlrel = $db->consulta("SELECT DISTINCT a.nombres, a.apellidos, pg.tarifa  
+                                    FROM  `event_asist` ea
+                                    INNER JOIN asistentes a ON a.cedula=ea.cedula
+                                    INNER JOIN pagos pg ON pg.cedula=ea.cedula
+                                    WHERE ea.idevent=pg.idevento
+                                    AND ea.cedula ='$_GET[idpart]'
+                                    AND ea.idevent ='$_GET[idevent]'");
+	$num = $db->num_rows($sqlrel);
+	
+	if($num>0){
+		$rowrel = $db->fetch_array($sqlrel);
+		$nompart = "$rowrel[nombres] $rowrel[apellidos] ";
+		$part = utf8_encode($nompart);
+		$tarifa = utf8_encode($rowrel['tarifa']);						  
+		$array = array("sw" => 1 , "part" => $part , "tarifa" => $tarifa );
+	}else{
+		$array = array("sw" => 2 , "error" => $sqlrel , "num" => $num);
+	}
 }
 
 

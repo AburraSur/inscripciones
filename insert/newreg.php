@@ -104,6 +104,9 @@ if($tp==1){
 			$msn = "Las Contraseñas no Coinciden. Por favor verificarlas";
 		}
 	}
+}elseif($tp==5){
+    $sw = $db->consulta("update pagos set tarifa='$_POST[tarifaEvento]' where cedula='$_POST[idpartTarifa]' and idevento=$_POST[eventoTarifa] ");
+    $log = "El Usuario $varsesion cambio la tarifa para la cedula='$_POST[idpartTarifa]' and idevent=$_POST[eventoTarifa]";
 }
 
 if($sw==1){
