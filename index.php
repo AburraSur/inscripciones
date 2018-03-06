@@ -1059,6 +1059,7 @@ background-attachment: fixed;
 					<a href="#" class="button advc" value="chgemp" >Cambiar Relaci&oacute;n</a>
 					<a href="#" class="button advc" value="newuser" >Crear Usuario</a>
 					<a href="#" class="button advc" value="aduser" >Administrar Usuarios</a>
+                                        <a href="#" class="button advc" value="chTarifa" >Cambiar tarifa</a>
 					
 				</aside>
 				<section id="listavanza" >
@@ -1304,6 +1305,37 @@ background-attachment: fixed;
 					</div>
 					</fieldset>
 				</form>
+                                <div id="chTarifa" style="display:none" class="hideform" >
+                                    <fieldset><legend><b><i>Cambiar Tarifa Participante</i></b></legend>
+                                     <font face="Verdana" size="3" ><b><i>Seleccione Evento</i></b></font><br>
+                                    <select name="eventch" id="eventchTarifa" class="selectboxes" />
+                                    <option value="0" >---Seleccione---</option>
+                                    <?php
+
+                                    $sqlev = $db->consulta("select * from evento where estado='ACTIVO' and pago='1'");
+                                    while( $rowev = $db->fetch_array($sqlev)){
+                                            echo "<option value=$rowev[idevento] >$rowev[idevento] - $rowev[nom_evento]</option>";
+                                    }		
+                                    ?>
+                                    </select><br>
+                                     <font face="Verdana" size="3" ><b><i>Cedula del Participante</i></b></font>&nbsp;
+                                     <input type="text" name="cedpart"  id="cedpartTarifa" /><a href="#" class="button" id="findpartTarifa" >Consultar</a><br><br>
+                                     <form name="changeTarifa" id="changeTarifa" style="display:none" >
+                                        <font face="Verdana" size="3" ><b><i><span id="inscritoTarifa"></span></i></b></font>&nbsp;
+                                        <input type="hidden" name="idpartTarifa" id="idpartTarifa" value="" />
+                                        <input type="hidden" name="eventoTarifa" id="eventoTarifa" value="" />
+                                        <input type="hidden" name="tp" value="5" />
+                                        <select name="tarifaEvento" id="tarifaEvento" >
+                                            <option>--Seleccione--</option>
+                                            <option>Afiliado</option>
+                                            <option>Estudiante</option>
+                                            <option>Invitado</option>
+                                            <option>Matriculado</option>
+                                            <option>Particular</option>
+                                        </select>
+                                        <a href="#" class="button subreg" value="changeTarifa" >Aceptar</a>
+                                     </form> 
+				</div>
 				<form id="chgemp" style="display:none" class="hideform" >
 					<fieldset><legend><b><i>Cambiar Relaci&oacute;n Empresa-Participante</i></b></legend>
 						 <font face="Verdana" size="3" ><b><i>Seleccione Evento</i></b></font><br>
