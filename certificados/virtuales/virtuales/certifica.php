@@ -70,7 +70,7 @@ $descripcio = utf8_encode($roweve['var_certi']);
             <div class="nombre"><p><b><?php echo $asistente; ?></b></p> Identificación: <?php echo $id; ?> 
 				<p><b>Particip&oacute; en el evento</b></p>
 				<p><b><?php echo $nomevento; ?></b></p>
-				<p><b>Con una duraci&oacute;n de: <?php echo $descripcio; ?></b></p>
+				<p><b><?php echo $descripcio; ?></b></p>
 			</div>	
             <div class="firma"><img src='../../img/firmavirtual.png' /></div>
 	
