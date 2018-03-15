@@ -1,7 +1,7 @@
 <?php
 
 $conexion = mysql_connect("localhost","root","Ccas1992");  
-  mysql_select_db("ccasco_promo2017",$conexion) or die(mysql_error());  
+  mysql_select_db("ccasco_promo",$conexion) or die(mysql_error());  
   
   
 $ideve = $_GET['ideve'];
@@ -71,7 +71,7 @@ $descripcio = utf8_encode($roweve['var_certi']);
                 <p><b><?php echo $asistente; ?></b></p> 
                 Identificación: <?php echo $id; ?> 
             </div>
-            <div class="certifica" ><p><b><?php echo "Participó en el evento: ".$roweve['nom_evento'].", ".$roweve['var_certi']; ?></b></p></div>
+            <div class="certifica" ><p><b><?php echo "Participó en el evento: ".$nomevento.", ".$descripcio; ?></b></p></div>
             <div class="firma"><img src='../../img/firmavirtual.png' /></div>
 	
 	<h4 id="footer" style="text-align: center;" ><?php echo utf8_encode($fechaevefoot); ?></h4>
