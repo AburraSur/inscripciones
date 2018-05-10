@@ -1059,7 +1059,8 @@ background-attachment: fixed;
 					<a href="#" class="button advc" value="chgemp" >Cambiar Relaci&oacute;n</a>
 					<a href="#" class="button advc" value="newuser" >Crear Usuario</a>
 					<a href="#" class="button advc" value="aduser" >Administrar Usuarios</a>
-                                        <a href="#" class="button advc" value="chTarifa" >Cambiar tarifa</a>
+                                        <a href="#" class="button advc" value="chTarifa" >Cambiar tarifa de asistente</a>
+                                        <a href="#" class="button advc" value="chTarifaEvento" >Cambiar tarifas de evento</a>
 					
 				</aside>
 				<section id="listavanza" >
@@ -1334,6 +1335,30 @@ background-attachment: fixed;
                                             <option>Particular</option>
                                         </select>
                                         <a href="#" class="button subreg" value="changeTarifa" >Aceptar</a>
+                                     </form> 
+				</div>
+                                <div id="chTarifaEvento" style="display:none" class="hideform" >
+                                    <fieldset><legend><b><i>Cambiar Tarifas de evento</i></b></legend>
+                                     <font face="Verdana" size="3" ><b><i>Seleccione Evento</i></b></font><br>
+                                    <select name="selectCambiarTarifaEvento" id="selectCambiarTarifaEvento" class="selectboxes" />
+                                    <option value="0" >---Seleccione---</option>
+                                    <?php
+
+                                    $sqlev = $db->consulta("select * from evento where estado='ACTIVO' and pago='1'");
+                                    while( $rowev = $db->fetch_array($sqlev)){
+                                            echo "<option value=$rowev[idevento] >$rowev[idevento] - $rowev[nom_evento]</option>";
+                                    }		
+                                    ?>
+                                    </select><br>                                    
+                                     <form name="changeTarifaEvento" id="changeTarifaEvento" style="display:none" >
+                                         <input type="hidden" name="tp" value="6" />
+                                         <input type="hidden" name="idEventotarifa" id="idEventotarifa"  />
+                                         <table>
+                                            <tr><td><label>Afiliado</td><td><input type="text" name="tar1Afiliado" id="tarAfiliado" /><input type="hidden" name="tar1" value="Afiliado" /></td></tr>
+                                            <tr><td><label>Matriculado</td><td><input type="text" name="tar2Matriculado" id="tarMatriculado" /><input type="hidden" name="tar2" value="Matriculado" /></td></tr>
+                                            <tr><td><label>Particular</td><td><input type="text" name="tar3Particular" id="tarParticular" /><input type="hidden" name="tar3" value="Particular" /></td></tr>
+                                        </table>    
+                                        <a href="#" class="button subreg" value="changeTarifaEvento" >Aceptar</a>
                                      </form> 
 				</div>
 				<form id="chgemp" style="display:none" class="hideform" >

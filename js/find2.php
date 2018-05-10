@@ -207,6 +207,22 @@ if($n == 3){
 	}else{
 		$array = array("sw" => 2 , "error" => $sqlrel , "num" => $num);
 	}
+}elseif($n==7){
+//	$sqlrel = $db->consulta("select * from pagos where idevent='$_GET[idevent]' and cedula='$_GET[idpart]'");
+        $sqlrel = $db->consulta("SELECT * from tarifas_evento where idevento='$_GET[idevent]'");
+	$num = $db->num_rows($sqlrel);
+	
+	if($num>0){
+		
+                while($rowrel = $db->fetch_array($sqlrel)){
+                    $tarifas[$rowrel['categoria']] = $rowrel['valor'];
+                }
+                
+                $tarifasEvento = json_encode($tarifas);
+		$array = array("sw" => 1 , "tarifasEvento" => $tarifasEvento );
+	}else{
+		$array = array("sw" => 2 , "error" => $sqlrel , "num" => $num);
+	}
 }
 
 

@@ -107,7 +107,17 @@ if($tp==1){
 }elseif($tp==5){
     $sw = $db->consulta("update pagos set tarifa='$_POST[tarifaEvento]' where cedula='$_POST[idpartTarifa]' and idevento=$_POST[eventoTarifa] ");
     $log = "El Usuario $varsesion cambio la tarifa para la cedula='$_POST[idpartTarifa]' and idevent=$_POST[eventoTarifa]";
+}elseif($tp==6){
+    $log = "El Usuario $varsesion cambio la tarifa ";
+    for($i=1;$i<=3;$i++){
+        $categoria = $_POST["tar$i"];
+        $valorCampo = "tar$i".$_POST["tar$i"];
+        $tarifa = $_POST[$valorCampo];
+        $sw = $db->consulta("update tarifas_evento set valor=$tarifa where categoria='".$categoria."' and idevento=".$_POST['idEventotarifa']." ");
+        $log.= "$categoria = $tarifa para el evento idevent=$_POST[idEventotarifa] - ";
+    }
 }
+
 
 if($sw==1){
 	$msn = "El Registro fue Exitoso";	

@@ -1069,4 +1069,35 @@ $(document).ready(function(){
 		})
 		return false;
 	});
+        
+        
+        $('#selectCambiarTarifaEvento').change(function(){
+            var idevent = $(this).val();
+            $('#idEventotarifa').val(idevent);
+            $.ajax({
+			url: './js/find2.php',
+			type: 'GET',
+			data: {n:7,idevent:idevent},
+			success: function ( datac ){
+                            console.log(datac);
+				var objc = eval ( '(' + datac + ')' );
+				if(objc.sw==1){
+                                    $('#changeTarifaEvento').show('fast');
+                                      var tarifas = objc.tarifasEvento;
+                                        var tar = JSON.parse(tarifas);
+                                        for (var key in tar) {
+                                            $('#tar'+key).val(tar[key]);
+                                          }
+				}else{
+                                    var myArray = {id1: 100, id2: 200, "tag with spaces": 300};
+                                    for (var key in myArray) {
+                                        console.log("key " + key + " has value " + myArray[key]);
+                                      }
+				}
+			}
+		})
+		return false;
+            
+            
+        });
   });

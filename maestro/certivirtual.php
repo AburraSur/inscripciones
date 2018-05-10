@@ -21,11 +21,11 @@ $correo="<p style='font-family:Arial;font-size:12px;line-height:16px;align:justi
 					$mail->SMTPAuth = true;
 					$mail->SMTPSecure = "tls";
 					//$mail->Host       = "190.248.151.10";
-					$mail->Host       = "host416.hostmonster.com";
+					$mail->Host       = "smtp-relay.sendinblue.com";
 					//$mail->Host       = "192.168.1.20";
-					$mail->Port       = 25;
-					$mail->Username = "inscripciones@ccas.co";
-					$mail->Password = "Ccas2010";
+					$mail->Port       = 587;
+					$mail->Username = "notificaciones@ccas.org.co";
+					$mail->Password = "GJgmTsr7hFkN83xp";
 					$body = "<html><head><style>p{font-family:Arial;font-size:12px}</style></head><body>$correo</body>";
 					$mail->SetFrom("inscripciones@ccas.co","Inscripciones Eventos Aburra Sur");
 					
